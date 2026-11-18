@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Profile Finder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="heading">
+        <h1>GitHub Profile Finder</h1>
+        <p class="theme">Light <i class="fa-solid fa-sun"></i></p>
+      </header>
+
+      <form class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          type="text"
+          id="input-username"
+          placeholder="Search GitHub username..."
+        />
+        <button type="submit" class="search-button">Search</button>
+      </form>
+
+      <article class="profile-card">
+        <div class="basic-info">
+          <div class="profile-pic">
+            <img class="avatar" src="" alt="GitHub profile avatar" />
+          </div>
+
+          <div class="details">
+            <section class="name-date">
+              <div class="names">
+                <p id="name">The Octocat</p>
+                <p id="username">@octocat</p>
+              </div>
+              <div class="joined-date">
+                <p>Joined 25 Jan 2011</p>
+              </div>
+            </section>
+
+            <section class="bio">
+              <p>This profile has bio</p>
+            </section>
+
+            <section class="stats-section">
+              <div class="repos">
+                <p class="repo-heading stat-heading">Repos</p>
+                <p class="count repo-count">0</p>
+              </div>
+              <div class="followers">
+                <p class="followers-heading stat-heading">Followers</p>
+                <p class="count followers-count">0</p>
+              </div>
+              <div class="following">
+                <p class="following-heading stat-heading">Following</p>
+                <p class="count following-count">0</p>
+              </div>
+            </section>
+          </div>
+        </div>
+        <hr />
+        <section class="more-details">
+          <div class="how-long">
+            <i class="fa-regular fa-calendar"></i>
+            <div class="seperate">
+              <p class="year-count">4 years</p>
+              <p>on GitHub</p>
+            </div>
+          </div>
+          <div class="top-lang">
+            <i class="fa-solid fa-code"></i>
+            <div class="up-down">
+              <p>Top Language</p>
+              <p class="top-lang">Python</p>
+            </div>
+          </div>
+          <div class="profile-link">
+            <i class="fa-solid fa-link"></i>
+            <a href="" class="link-display" target="_blank"
+              >View GitHub Profile</a
+            >
+          </div>
+        </section>
+        <hr />
+        <section class="repos-details">
+          <header class="top-repo-heading">
+            <h3>Top Repositories</h3>
+            <a href="" class="see-all" target="_blank"
+              >See all <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </header>
+
+          <div class="card-container">
+            <article class="first-repo repo-card">
+              <div class="repo-name">
+                <!-- <i class="fa-solid fa-computer"></i> -->
+                <i class="fa-solid fa-book"></i>
+                <h4>machine-learning</h4>
+              </div>
+
+              <p class="repo-description">AI algorithms and projects</p>
+
+              <div class="repo-stats">
+                <span class="first-repo-lang lang"><i class="fa-solid fa-circle"></i> Python</span>
+                <span class="first-repo-star star"><i class="fa-regular fa-star"></i> 3.2k</span>
+                <span class="first-repo-fork fork"><i class="fa-solid fa-code-fork"></i> 732</span>
+              </div>
+            </article>
+            <article class="second-repo repo-card">
+              <div class="repo-name">
+                <i class="fa-solid fa-book"></i>
+                <h4>machine-learning</h4>
+              </div>
+
+              <p class="repo-description">AI algorithms and projects</p>
+
+              <div class="repo-stats">
+                <span class="second-repo-lang lang"><i class="fa-solid fa-circle"></i> Python</span>
+                <span class="second-repo-star star"><i class="fa-regular fa-star"></i> 3.2k</span>
+                <span class="second-repo-fork fork"><i class="fa-solid fa-code-fork"></i> 732</span>
+              </div>
+            </article>
+            <article class="third-repo repo-card">
+              <div class="repo-name">
+                <i class="fa-solid fa-book"></i>
+                <h4>machine-learning</h4>
+              </div>
+
+              <p class="repo-description">AI algorithms and projects</p>
+
+              <div class="repo-stats">
+                <span class="third-repo-lang lang"><i class="fa-solid fa-circle"></i> Python</span>
+                <span class="third-repo-star star"><i class="fa-regular fa-star"></i> 3.2k</span>
+                <span class="third-repo-fork fork"><i class="fa-solid fa-code-fork"></i> 732</span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

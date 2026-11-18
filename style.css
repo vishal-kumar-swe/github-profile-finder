@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    background-color: #141c2f;
+}
+
+.container {
+    width: 910px;
+    height: 600px;
+    margin: auto;
+    /* background-color: #63729c; */
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.heading h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ddd8d8;
+}
+
+.theme {
+    font-size: 14px;
+    font-weight: 500;
+    color: #b6bcca;
+}
+
+.fa-sun {
+    color: #fff;
+}
+
+.search-bar {
+    background-color: #1f2a48;
+    border-radius: 12px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.fa-magnifying-glass {
+    font-size: 18px;
+    color: #0079ff;
+    margin: 10px 20px 10px 8px;
+    padding-top: 5px;
+}
+
+#input-username {
+    background-color: transparent;
+    border: none transparent;
+    width: 750px;
+    outline: none;
+    font-size: 16px;
+    color: #b6bcca;
+    
+}
+
+#input-username::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.search-button {
+    background-color: #2c65f4;
+    cursor: pointer;
+    border: none transparent;
+    flex: 1;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 5px 4px 5px 0px;
+}
+
+.profile-card {
+    height: 520px;
+    width: 100%;
+    background-color: #1f2a48;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.basic-info {
+    height: 240px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.profile-pic {
+    height: auto;
+    width: 200px;
+    display: flex;
+    justify-content: end;
+}
+
+.avatar {
+    background-color: #ddd8d8;
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-right: 30px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.details {
+    flex: 1;
+}
+
+.name-date {
+    /* background-color: #644f4f; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.names {
+    padding: 7px;
+}
+
+#name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ddd8d8;
+}
+
+#username {
+    font-size: 13px;
+    font-weight: 500;
+    color: #2c65f4;
+}
+
+.joined-date {
+    font-size: 13px;
+    font-weight: 500;
+    padding-right: 40px;
+    color: #b6bcca;
+}
+
+.bio {
+    font-size: 13px;
+    color: #b6bcca;
+    font-weight: 400;
+    padding: 7px;
+    width: 100%;
+    height: auto;
+    margin-right: 30px;
+}
+
+.stats-section {
+    width: calc(100% - 30px);
+    height: 50px;
+    background-color: #181130;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.stat-heading {
+    font-size: 13px;
+    font-weight: 500;
+    color: #b6bcca;
+    padding: 0 20px;
+}
+
+.count {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ddd8d8;
+    padding: 0 30px;
+}
+
+
+hr {
+    background-color: #343D59;
+    border: none;
+    height: 1px;
+    margin: 0px 25px;
+}
+
+.more-details {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.how-long {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.seperate {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-top: 16px;
+    color: #b6bcca;
+}
+
+.fa-calendar {
+    font-size: 24px;
+    margin: 20px 15px 20px 30px ;
+    color: #A8B9DC;
+}
+
+.top-lang {
+    display: flex;
+    flex-direction: row;
+    line-height: 18px;
+    color: #b6bcca;
+    margin-top: 5px;
+}
+
+.top-lang {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ddd8d8;
+}
+
+.fa-code {
+    font-size: 24px;
+    margin-right: 20px;
+    color: #A8B9DC;
+}
+
+.profile-link {
+    height: 52px;
+    width: 240px;
+    background-color: #3865f5;
+    border-radius: 12px;
+    border: none transparent;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fa-link {
+    font-size: 14px;
+    color: #ddd8d8;
+}
+
+.link-display {
+    text-decoration: none;
+    color: #ddd8d8;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.repos-details {
+    width: 100%;
+    flex: 1;
+}
+
+.top-repo-heading {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ddd8d8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+.see-all {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5685ff;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 30px 30px;
+}
+
+.repo-card {
+    height: 120px;
+    width: 270px;
+    background-color: #181f36;
+    border-radius: 15px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.repo-name {
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c6c3c3;
+}
+
+.fa-book {
+    color: #4d7ff8;
+}
+
+.repo-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: #b6bcca;
+}
+
+.fa-circle {
+    font-size: 14px;
+    color: #4299f5;
+}
+
+.fa-star {
+    font-size: 14px;
+    color: #c6c3c3;
+
+}
+
+.fa-code-fork {
+    font-size: 14px;
+    color: #c6c3c3;
+}
+
+.lang {
+    color: #d6d8dd;
+}
+
+.star {
+    color: #b6bcca;
+}
+
+.fork {
+    color: #b6bcca;
+}
