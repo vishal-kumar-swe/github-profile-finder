@@ -14,13 +14,14 @@ const profileLink = document.querySelector('.link-display')
 
 searchButton.addEventListener('click', (event) => {
     event.preventDefault();
+    let repoUrl = null;
 
     fetch(`https://api.github.com/users/${inputUsername.value.trim()}`)
     .then((response) => {
 
         if(!response.ok) {
-            // throw new Error("User not found")
-            alert('Enter valid username')
+            throw new Error("User not found")
+            // alert('Enter valid username')  // this will just give error message to user but not stop execution
         }
         return response.json()
     })
@@ -37,10 +38,26 @@ searchButton.addEventListener('click', (event) => {
         duration(data.created_at);
         profileDuration(data.html_url);
 
+        fetch(data.repos_url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Unexpected Error");
+            } else {
+              return response.json();
+            }
+          })
+          .then((repoData) => {
+            console.log(repoData);
+            addTopLang(repoData);
+          })
+          .catch((error) => {
+            alert(error);
+          });
+
     })
     .catch((error) => {
         // console.log(error)
-        alert('error')
+        alert(error)
     })
     inputUsername.value = "";
 })
@@ -115,4 +132,36 @@ function duration(dates) {
 
 function profileDuration(link) {
     profileLink.href = link;
+}
+
+
+function addTopLang (array) {
+    // adding top language
+
+    let langCount = {}
+
+    for (let index = 0; index < array.length; index++) {
+        let repoLang = array[index].language;
+         
+        if (repoLang !== null) {
+            if (langCount[repoLang] === undefined) {
+                langCount[repoLang] = 1;
+            } else {
+                langCount[repoLang] += 1;
+            }
+        }
+    }
+
+    let maxcount = 0;
+    let mostUsedLang = "Not available";
+
+    for (const key in langCount) {
+        
+        if (langCount[key] > maxcount) {
+            maxcount = langCount[key];
+            mostUsedLang = key;
+        }
+    }
+
+    topLang.innerText = mostUsedLang;
 }
