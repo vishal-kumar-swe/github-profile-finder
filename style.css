@@ -96,7 +96,7 @@ body {
   border-radius: 14px;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .basic-info {
@@ -307,13 +307,14 @@ hr {
 .card-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 24px;
   padding: 0px 30px 30px;
   align-items: stretch;
 }
 
 .repo-card {
-  width: 270px;
+  flex: 1;
+  min-width: 0;
   background-color: #181f36;
   border-radius: 15px;
   padding: 18px;
@@ -332,10 +333,23 @@ hr {
   align-items: center;
   gap: 10px;
   color: #c6c3c3;
+  min-width: 0;
+}
+
+.repo-title {
+  min-width: 0;
+  flex: 1;
+  font-size: 15px;
+  font-weight: 700;
+  color: #c6c3c3;
+
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .fa-book {
   color: #4d7ff8;
+  flex-shrink: 0;
 }
 
 .repo-description {
@@ -380,4 +394,35 @@ hr {
 
 .fork {
   color: #b6bcca;
+}
+
+.empty-display-message {
+  width: 100%;
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+
+  background-color: #181f36;
+  border: 1px dashed #394563;
+  border-radius: 12px;
+
+  color: #b6bcca;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.empty-display-message .fa-folder-open {
+  color: #8294bd;
+  font-size: 24px;
+}
+
+.empty-display-message .line2 {
+  color: #8290ad;
+  font-size: 13px;
+  font-weight: 400;
 }

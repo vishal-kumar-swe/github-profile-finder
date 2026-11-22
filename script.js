@@ -11,23 +11,26 @@ const followingCount = document.querySelector(".following-count");
 const yearCount = document.querySelector(".year-count");
 const topLang = document.querySelector(".top-lang");
 const profileLink = document.querySelector(".link-display");
-const firstRepoName = document.querySelector(".first-repo-name");
-const firstRepoDescription = document.querySelector(".first-repo-description");
-const firstRepoLang = document.querySelector(".first-repo-lang");
-const firstRepoStar = document.querySelector(".first-repo-star");
-const firstRepofork = document.querySelector(".first-repo-fork");
-const secondRepoName = document.querySelector(".second-repo-name");
-const secondRepoDescription = document.querySelector(
-  ".second-repo-description",
-);
-const secondRepoLang = document.querySelector(".second-repo-lang");
-const secondRepoStar = document.querySelector(".second-repo-star");
-const secondRepofork = document.querySelector(".second-repo-fork");
-const thirdRepoName = document.querySelector(".third-repo-name");
-const thirdRepoDescription = document.querySelector(".third-repo-description");
-const thirdRepoLang = document.querySelector(".third-repo-lang");
-const thirdRepoStar = document.querySelector(".third-repo-star");
-const thirdRepofork = document.querySelector(".third-repo-fork");
+
+// const firstRepoName = document.querySelector(".first-repo-name");
+// const firstRepoDescription = document.querySelector(".first-repo-description");
+// const firstRepoLang = document.querySelector(".first-repo-lang");
+// const firstRepoStar = document.querySelector(".first-repo-star");
+// const firstRepofork = document.querySelector(".first-repo-fork");
+// const secondRepoName = document.querySelector(".second-repo-name");
+// const secondRepoDescription = document.querySelector(
+//   ".second-repo-description",
+// );
+// const secondRepoLang = document.querySelector(".second-repo-lang");
+// const secondRepoStar = document.querySelector(".second-repo-star");
+// const secondRepofork = document.querySelector(".second-repo-fork");
+// const thirdRepoName = document.querySelector(".third-repo-name");
+// const thirdRepoDescription = document.querySelector(".third-repo-description");
+// const thirdRepoLang = document.querySelector(".third-repo-lang");
+// const thirdRepoStar = document.querySelector(".third-repo-star");
+// const thirdRepofork = document.querySelector(".third-repo-fork");
+
+const cardContainer = document.querySelector('.card-container');
 
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -65,7 +68,7 @@ searchButton.addEventListener("click", (event) => {
         .then((repoData) => {
           console.log(repoData);
           addTopLang(repoData);
-          topRepos(repoData);
+          topRepo(repoData);
         })
         .catch((error) => {
           alert(error);
@@ -181,30 +184,76 @@ function addTopLang(array) {
   topLang.innerText = mostUsedLang;
 }
 
-function topRepos(array) {
-  const arr = sort(array);
+// function topRepos(array) {
+//   const arr = sort(array);
 
-  if (arr.length >= 3) {
-    const newSlicedArr = arr.slice(0, 3);
+//   if (arr.length >= 3) {
+//     const newSlicedArr = arr.slice(0, 3);
 
-    firstRepoName.innerText = newSlicedArr[0].name;
-    firstRepoDescription.innerText = newSlicedArr[0].description;
-    firstRepoLang.innerText = newSlicedArr[0].language;
-    firstRepoStar.innerText = formatCount(newSlicedArr[0].stargazers_count);
-    firstRepofork.innerText = formatCount(newSlicedArr[0].forks_count);
+//     firstRepoName.innerText = newSlicedArr[0].name;
+//     firstRepoDescription.innerText = newSlicedArr[0].description;
+//     firstRepoLang.innerText = newSlicedArr[0].language;
+//     firstRepoStar.innerText = formatCount(newSlicedArr[0].stargazers_count);
+//     firstRepofork.innerText = formatCount(newSlicedArr[0].forks_count);
 
-    secondRepoName.innerText = newSlicedArr[1].name;
-    secondRepoDescription.innerText = newSlicedArr[1].description;
-    secondRepoLang.innerText = newSlicedArr[1].language;
-    secondRepoStar.innerText = formatCount(newSlicedArr[1].stargazers_count);
-    secondRepofork.innerText = formatCount(newSlicedArr[1].forks_count);
+//     secondRepoName.innerText = newSlicedArr[1].name;
+//     secondRepoDescription.innerText = newSlicedArr[1].description;
+//     secondRepoLang.innerText = newSlicedArr[1].language;
+//     secondRepoStar.innerText = formatCount(newSlicedArr[1].stargazers_count);
+//     secondRepofork.innerText = formatCount(newSlicedArr[1].forks_count);
 
-    thirdRepoName.innerText = newSlicedArr[2].name;
-    thirdRepoDescription.innerText = newSlicedArr[2].description;
-    thirdRepoLang.innerText = newSlicedArr[2].language;
-    thirdRepoStar.innerText = formatCount(newSlicedArr[2].stargazers_count);
-    thirdRepofork.innerText = formatCount(newSlicedArr[2].forks_count);
-  }
+//     thirdRepoName.innerText = newSlicedArr[2].name;
+//     thirdRepoDescription.innerText = newSlicedArr[2].description;
+//     thirdRepoLang.innerText = newSlicedArr[2].language;
+//     thirdRepoStar.innerText = formatCount(newSlicedArr[2].stargazers_count);
+//     thirdRepofork.innerText = formatCount(newSlicedArr[2].forks_count);
+//   }
+// }
+
+function  topRepo(array) {
+    cardContainer.innerHTML = '';
+    let arr = sort(array);
+    
+    if (arr.length > 3) {
+        arr = arr.slice(0, 3);
+    }
+    if (arr.length === 0) {
+        cardContainer.innerHTML = `
+        <div class="empty-display-message">
+        <i class="fa-regular fa-folder-open"></i>
+        <span>No repositories found</span>
+        <span class="line2">This user has no public repositories yet</span>
+        </div>`;
+    } else {
+        for (let i = 0; i < arr.length; i++) {
+            cardContainer.innerHTML += `
+            <article class="repo-card">
+              <div class="repo-name">
+                <i class="fa-solid fa-book"></i>
+                <h4 class="repo-title">${arr[i].name}</h4>
+              </div>
+
+              <p class="repo-description">${arr[i].description}</p>
+
+              <div class="repo-stats">
+                <span class="lang">
+                  <i class="fa-solid fa-circle"></i>
+                  <span class="repo-lang">${arr[i].language}</span>
+                </span>
+
+                <span class="star">
+                  <i class="fa-regular fa-star"></i>
+                  <span class="star-count">${formatCount(arr[i].stargazers_count)}</span>
+                </span>
+
+                <span class="fork">
+                  <i class="fa-solid fa-code-fork"></i>
+                  <span class="fork-count">${formatCount(arr[i].forks_count)}</span>
+                </span>
+              </div>
+            </article>`;
+        }
+    }
 }
 
 function sort(array) {
