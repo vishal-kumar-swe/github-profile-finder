@@ -34,12 +34,18 @@ const cardContainer = document.querySelector('.card-container');
 
 const profileCard = document.querySelector('.profile-card')
 const welcomeScreen = document.querySelector('.welcome-screen')
+const loadingScreen = document.querySelector('.loading-screen')
 
 profileCard.style.display = 'none';
 welcomeScreen.style.display = 'flex';
+loadingScreen.style.display = 'none';
 
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
+  profileCard.style.display = 'none';
+  welcomeScreen.style.display = 'none';
+  loadingScreen.style.display = 'flex';
+
   let repoUrl = null;
 
   fetch(`https://api.github.com/users/${inputUsername.value.trim()}`)
@@ -52,6 +58,7 @@ searchButton.addEventListener("click", (event) => {
     })
     .then((data) => {
       // console.log(data);
+      loadingScreen.style.display = 'none';
       welcomeScreen.style.display = 'none';
       profileCard.style.display = 'flex';
       avatar(data.avatar_url);
@@ -74,7 +81,7 @@ searchButton.addEventListener("click", (event) => {
           }
         })
         .then((repoData) => {
-          console.log(repoData);
+          // console.log(repoData);
           addTopLang(repoData);
           topRepo(repoData);
         })

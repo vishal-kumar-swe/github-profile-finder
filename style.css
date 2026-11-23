@@ -121,6 +121,51 @@ body {
     color: #b6bdce;
 }
 
+.loading-screen {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+
+    background-color: #222c48;
+    border-radius: 15px;
+    padding: 40px 30px;
+}
+
+.loading-screen i {
+    font-size: 45px;
+    color: #8298f5;
+    margin-bottom: 10px;
+
+    animation: spin 2s linear infinite;
+}
+
+.loading-screen h2 {
+    font-size: 24px;
+    color: #e1e5f0;
+    font-weight: 700;
+}
+
+.loading-screen p {
+    max-width: 450px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #b6bdce;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .profile-card {
   min-height: 520px;
   height: auto;
