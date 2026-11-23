@@ -32,6 +32,12 @@ const profileLink = document.querySelector(".link-display");
 
 const cardContainer = document.querySelector('.card-container');
 
+const profileCard = document.querySelector('.profile-card')
+const welcomeScreen = document.querySelector('.welcome-screen')
+
+profileCard.style.display = 'none';
+welcomeScreen.style.display = 'flex';
+
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
   let repoUrl = null;
@@ -45,7 +51,9 @@ searchButton.addEventListener("click", (event) => {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
+      welcomeScreen.style.display = 'none';
+      profileCard.style.display = 'flex';
       avatar(data.avatar_url);
       updateName(data.name);
       userName(data.login);

@@ -87,6 +87,40 @@ body {
   margin: 5px 4px 5px 0px;
 }
 
+.welcome-screen {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+
+    background-color: #1f2a48;
+    border-radius: 15px;
+    padding: 40px 30px;
+}
+
+.welcome-screen i {
+    font-size: 55px;
+    color: #8298f5;
+    margin-bottom: 10px;
+}
+
+.welcome-screen h2 {
+    font-size: 24px;
+    color: #e1e5f0;
+    font-weight: 700;
+}
+
+.welcome-screen p {
+    max-width: 450px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #b6bdce;
+}
+
 .profile-card {
   min-height: 520px;
   height: auto;
@@ -417,7 +451,7 @@ hr {
 }
 
 .empty-display-message .fa-folder-open {
-  color: #8294bd;
+  color: #8298f5;
   font-size: 24px;
 }
 
