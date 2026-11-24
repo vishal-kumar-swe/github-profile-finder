@@ -35,16 +35,19 @@ const cardContainer = document.querySelector('.card-container');
 const profileCard = document.querySelector('.profile-card')
 const welcomeScreen = document.querySelector('.welcome-screen')
 const loadingScreen = document.querySelector('.loading-screen')
+const invalidUsername = document.querySelector('.invalid-username')
 
 profileCard.style.display = 'none';
 welcomeScreen.style.display = 'flex';
 loadingScreen.style.display = 'none';
+invalidUsername.style.display = 'none';
 
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
   profileCard.style.display = 'none';
   welcomeScreen.style.display = 'none';
   loadingScreen.style.display = 'flex';
+  invalidUsername.style.display = 'none';
 
   let repoUrl = null;
 
@@ -59,7 +62,6 @@ searchButton.addEventListener("click", (event) => {
     .then((data) => {
       // console.log(data);
       loadingScreen.style.display = 'none';
-      welcomeScreen.style.display = 'none';
       profileCard.style.display = 'flex';
       avatar(data.avatar_url);
       updateName(data.name);
@@ -91,7 +93,8 @@ searchButton.addEventListener("click", (event) => {
     })
     .catch((error) => {
       // console.log(error)
-      alert(error);
+      loadingScreen.style.display = "none";
+      invalidUsername.style.display = "flex";
     });
   inputUsername.value = "";
 });
