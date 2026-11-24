@@ -260,23 +260,24 @@ function  topRepo(array) {
                 <h4 class="repo-title">${arr[i].name}</h4>
               </div>
 
-              <p class="repo-description">${arr[i].description}</p>
+              <p class="repo-description">${arr[i].description ?? "No description provided."}</p>
 
               <div class="repo-stats">
                 <span class="lang">
                   <i class="fa-solid fa-circle"></i>
-                  <span class="repo-lang">${arr[i].language}</span>
+                  <span class="repo-lang">${arr[i].language ?? "Language not specified"}</span>
                 </span>
+                <div class="star-fork">
+                  <span class="star">
+                    <i class="fa-regular fa-star"></i>
+                    <span class="star-count">${formatCount(arr[i].stargazers_count)}</span>
+                  </span>
 
-                <span class="star">
-                  <i class="fa-regular fa-star"></i>
-                  <span class="star-count">${formatCount(arr[i].stargazers_count)}</span>
-                </span>
-
-                <span class="fork">
-                  <i class="fa-solid fa-code-fork"></i>
-                  <span class="fork-count">${formatCount(arr[i].forks_count)}</span>
-                </span>
+                  <span class="fork">
+                    <i class="fa-solid fa-code-fork"></i>
+                    <span class="fork-count">${formatCount(arr[i].forks_count)}</span>
+                  </span>
+                </div>
               </div>
             </article>`;
         }
