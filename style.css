@@ -88,116 +88,116 @@ body {
 }
 
 .welcome-screen {
-    width: 100%;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 
-    background-color: #1f2a48;
-    border-radius: 15px;
-    padding: 40px 30px;
+  background-color: #1f2a48;
+  border-radius: 15px;
+  padding: 40px 30px;
 }
 
 .welcome-screen i {
-    font-size: 55px;
-    color: #8298f5;
-    margin-bottom: 10px;
+  font-size: 55px;
+  color: #8298f5;
+  margin-bottom: 10px;
 }
 
 .welcome-screen h2 {
-    font-size: 24px;
-    color: #e1e5f0;
-    font-weight: 700;
+  font-size: 24px;
+  color: #e1e5f0;
+  font-weight: 700;
 }
 
 .welcome-screen p {
-    max-width: 450px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #b6bdce;
+  max-width: 450px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #b6bdce;
 }
 
 .loading-screen {
-    width: 100%;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 
-    background-color: #222c48;
-    border-radius: 15px;
-    padding: 40px 30px;
+  background-color: #222c48;
+  border-radius: 15px;
+  padding: 40px 30px;
 }
 
 .loading-screen i {
-    font-size: 45px;
-    color: #8298f5;
-    margin-bottom: 10px;
+  font-size: 45px;
+  color: #8298f5;
+  margin-bottom: 10px;
 
-    animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 .loading-screen h2 {
-    font-size: 24px;
-    color: #e1e5f0;
-    font-weight: 700;
+  font-size: 24px;
+  color: #e1e5f0;
+  font-weight: 700;
 }
 
 .loading-screen p {
-    max-width: 450px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #b6bdce;
+  max-width: 450px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #b6bdce;
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .invalid-username {
-    width: 100%;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
 
-    background-color: #222c48;
-    border-radius: 15px;
-    padding: 40px 30px;
+  background-color: #222c48;
+  border-radius: 15px;
+  padding: 40px 30px;
 }
 
 .invalid-username i {
-    font-size: 45px;
-    color: #f07878;
-    margin-bottom: 10px;
+  font-size: 45px;
+  color: #f07878;
+  margin-bottom: 10px;
 }
 
 .invalid-username h2 {
-    font-size: 24px;
-    color: #e1e5f0;
-    font-weight: 700;
+  font-size: 24px;
+  color: #e1e5f0;
+  font-weight: 700;
 }
 
 .invalid-username p {
-    max-width: 450px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #b6bdce;
+  max-width: 450px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #b6bdce;
 }
 
 .profile-card {
@@ -477,9 +477,9 @@ hr {
 }
 
 .repo-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .fa-circle {
@@ -538,4 +538,39 @@ hr {
   color: #8290ad;
   font-size: 13px;
   font-weight: 400;
+}
+
+.repo-error {
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+
+  background-color: #222c48;
+  border: 1px dashed #394563;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.repo-error i {
+  font-size: 35px;
+  color: #f07878;
+  margin-bottom: 5px;
+}
+
+.repo-error h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e1e5f0;
+}
+
+.repo-error p {
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #b6bdce;
 }

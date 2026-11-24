@@ -36,11 +36,13 @@ const profileCard = document.querySelector('.profile-card')
 const welcomeScreen = document.querySelector('.welcome-screen')
 const loadingScreen = document.querySelector('.loading-screen')
 const invalidUsername = document.querySelector('.invalid-username')
+const repoError = document.querySelector('.repo-error')
 
 profileCard.style.display = 'none';
 welcomeScreen.style.display = 'flex';
 loadingScreen.style.display = 'none';
 invalidUsername.style.display = 'none';
+repoError.style.display = 'none';
 
 searchButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -48,6 +50,9 @@ searchButton.addEventListener("click", (event) => {
   welcomeScreen.style.display = 'none';
   loadingScreen.style.display = 'flex';
   invalidUsername.style.display = 'none';
+  repoError.style.display = 'none';
+  cardContainer.innerHTML = "";
+  cardContainer.style.display = "flex";
 
   let repoUrl = null;
 
@@ -77,18 +82,22 @@ searchButton.addEventListener("click", (event) => {
       fetch(data.repos_url)
         .then((response) => {
           if (!response.ok) {
-            throw new Error("Unexpected Error");
+            throw new Error("Unable to fetch repositories");
           } else {
             return response.json();
           }
         })
         .then((repoData) => {
           // console.log(repoData);
+          cardContainer.style.display = 'flex';
+          repoError.style.display = 'none';
           addTopLang(repoData);
           topRepo(repoData);
         })
         .catch((error) => {
-          alert(error);
+          // alert(error);
+          cardContainer.style.display = 'none';
+          repoError.style.display = 'flex';
         });
     })
     .catch((error) => {
