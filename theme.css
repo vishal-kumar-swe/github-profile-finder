@@ -1,0 +1,107 @@
+:root {
+  /* Page */
+  --page-background: #141c2f;
+
+  /* Header */
+  --header-title-color: #ddd8d8;
+  --theme-text-color: #b6bcca;
+  --theme-icon-color: #ffffff;
+
+  /* Search bar */
+  --search-background: #1f2a48;
+  --search-icon-color: #0079ff;
+  --search-input-color: #b6bcca;
+  --search-placeholder-color: #8993a6;
+  --search-button-background: #2c65f4;
+  --search-button-text: #24242a;
+
+  /* Welcome screen */
+  --welcome-background: #1f2a48;
+  --welcome-icon-color: #8298f5;
+  --welcome-heading-color: #e1e5f0;
+  --welcome-description-color: #b6bdce;
+
+  --loading-background: #222c48;
+
+  /* Invalid screen */
+  --invalid-icon-color: #f07878;
+
+  /* Profile card */
+  --profile-card-background: #1f2a48;
+  --profile-avatar-background: #ddd8d8;
+  --profile-name-color: #ddd8d8;
+  --profile-username-color: #2c65f4;
+  --profile-muted-text-color: #b6bcca;
+  --profile-stats-background: #181130;
+  --profile-divider-color: #343d59;
+
+  /* Profile additional details */
+  --profile-detail-icon-color: #a8b9dc;
+  --profile-link-background: #3865f5;
+  --see-all-link-color: #5685ff;
+
+  /* Repository cards */
+  --repo-card-background: #181f36;
+  --repo-primary-text-color: #c6c3c3;
+  --repo-icon-color: #4d7ff8;
+  --repo-language-dot-color: #4299f5;
+  --repo-language-color: #d6d8dd;
+
+  /* Repository messages */
+  --repo-message-border-color: #394563;
+  --repo-empty-secondary-text-color: #8290ad;
+}
+
+.light-theme {
+  /* Page */
+  --page-background: #e9edf5;
+
+  /* Header */
+  --header-title-color: #273247;
+  --theme-text-color: #6179c9;
+  --theme-icon-color: #6179c9;
+
+  /* Search bar */
+  --search-background: #f7f8fc;
+  --search-icon-color: #758198;
+  --search-input-color: #273247;
+  --search-placeholder-color: #8993a6;
+  --search-button-background: #6179c9;
+  --search-button-text: #f2f4f9;
+
+  /* Welcome screen */
+  --welcome-background: #f2f4f9;
+  --welcome-icon-color: #6179c9;
+  --welcome-heading-color: #273247;
+  --welcome-description-color: #6d788c;
+
+  --loading-background: #f2f4f9;
+
+  /* Invalid screen */
+  --invalid-icon-color: #d94b4b;
+
+  /* Profile card */
+  --profile-card-background: #f2f4f9;
+  --profile-avatar-background: #e1e5ed;
+  --profile-name-color: #273247;
+  --profile-username-color: #3865d9;
+  --profile-muted-text-color: #657187;
+  --profile-stats-background: #e2e7f1;
+  --profile-divider-color: #d5dce8;
+
+  /* Profile additional details */
+  --profile-detail-icon-color: #7186b8;
+  --profile-link-background: #4f6fd6;
+  --see-all-link-color: #3865d9;
+
+  /* Repository cards */
+  --repo-card-background: #e7ebf4;
+  --repo-primary-text-color: #344054;
+  --repo-icon-color: #3865d9;
+  --repo-language-dot-color: #4299f5;
+  --repo-language-color: #3b465b;
+
+  /* Repository messages */
+  --repo-message-border-color: #cbd4e2;
+  --repo-empty-secondary-text-color: #758198;
+}
